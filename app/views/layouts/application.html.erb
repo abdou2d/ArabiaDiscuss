@@ -3,12 +3,28 @@
   <head>
     <title>Arabia</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Cairo:400,700" rel="stylesheet" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Amiri|Lalezar&subset=arabic" rel="stylesheet" /> -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+
+    <%= render 'layouts/header' %>
+
+    <div id="Content" class="container">
+      <div class="body flex-column">
+        <div class="white-box">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+        <div class="white-box">
+          <%= yield %>
+        </div>
+      </div>
+      <%= render 'layouts/sidebar' %>
+    </div>
   </body>
 </html>
