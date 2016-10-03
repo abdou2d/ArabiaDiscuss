@@ -10,14 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003082136) do
+ActiveRecord::Schema.define(version: 20161003090424) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
-    t.text     "content",    limit: 65535
+    t.text     "content",                 limit: 65535
     t.integer  "user_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+    t.integer  "cached_votes_total",                    default: 0
+    t.integer  "cached_votes_score",                    default: 0
+    t.integer  "cached_votes_up",                       default: 0
+    t.integer  "cached_votes_down",                     default: 0
+    t.integer  "cached_weighted_score",                 default: 0
+    t.integer  "cached_weighted_total",                 default: 0
+    t.float    "cached_weighted_average", limit: 24,    default: 0.0
+    t.index ["cached_votes_down"], name: "index_posts_on_cached_votes_down", using: :btree
+    t.index ["cached_votes_score"], name: "index_posts_on_cached_votes_score", using: :btree
+    t.index ["cached_votes_total"], name: "index_posts_on_cached_votes_total", using: :btree
+    t.index ["cached_votes_up"], name: "index_posts_on_cached_votes_up", using: :btree
+    t.index ["cached_weighted_average"], name: "index_posts_on_cached_weighted_average", using: :btree
+    t.index ["cached_weighted_score"], name: "index_posts_on_cached_weighted_score", using: :btree
+    t.index ["cached_weighted_total"], name: "index_posts_on_cached_weighted_total", using: :btree
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
@@ -39,7 +53,7 @@ ActiveRecord::Schema.define(version: 20161003082136) do
     t.string   "last_name"
     t.boolean  "is_admin",                             default: false
     t.text     "image_data",             limit: 65535
-    t.integer  "points"
+    t.integer  "points",                               default: 0
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree

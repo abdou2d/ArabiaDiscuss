@@ -41,14 +41,16 @@ class PostsController < ApplicationController
   def upvote
     if not @post.user.id == current_user.id
       @post.upvote_by current_user
-      @post.user.points = @post.user.points + 1
+      @post.user.points += 1
+      redirect_to :back
     end
   end
 
   def downvote
     if not @post.user.id == current_user.id
       @post.downvote_by current_user
-      @post.user.points = @post.user.points - 1
+      @post.user.points -= 1
+      redirect_to :back
     end
   end
 
