@@ -1,47 +1,58 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
   end
 
   def show
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
-
 
   def edit
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      redirect_to @post
     else
       render :new
     end
   end
 
-  def update
-    if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
-    else
-      render :edit
+    def update
+      if @post.update(post_params)
+        redirect_to @post
+      else
+        render :edit
+      end
     end
-  end
-
 
   def destroy
     @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    redirect_to posts_url
+  end
+
+  def upvote
+    if not @post.user.id == current_user.id
+      @post.upvote_by current_user
+      @post.user.points = @post.user.points + 1
+    end
+  end
+
+  def downvote
+    if not @post.user.id == current_user.id
+      @post.downvote_by current_user
+      @post.user.points = @post.user.points - 1
+    end
   end
 
   private
-
     def set_post
       @post = Post.find(params[:id])
     end

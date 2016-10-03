@@ -1,22 +1,37 @@
 <header id="Header">
   <div class="header-elements">
-    <div class="logo">نقاشات<span> I/O </span></div>
-    <div class="side-elements">
-      <div class="user-functions flex-center">
-        <svg class="icon-search"><use xlink:href="<%= asset_path 'icons.svg' %>#icon-search"></use></svg>
-        <svg class="icon-create"><use xlink:href="<%= asset_path 'icons.svg' %>#icon-create"></use></svg>
-        <svg class="icon-notifications"><use xlink:href="<%= asset_path 'icons.svg' %>#icon-notifications"></use></svg>
-        <svg class="icon-mail"><use xlink:href="<%= asset_path 'icons.svg' %>#icon-mail"></use></svg>
+    <%= link_to root_path, class: "logo" do %>
+      نقاشات<span> I/O </span>
+    <% end %>
+    <% if user_signed_in? %>
+      <div class="side-elements">
+        <div class="user-functions flex-center-around">
+          <svg class="icon-search function"><use xlink:href="<%= asset_path 'icons.svg' %>#icon-search"></use></svg>
+          <%= link_to new_post_path, class: "add-post function" do %>
+            <svg class="icon-add-circle"><use xlink:href="<%= asset_path 'icons.svg' %>#icon-add-circle"></use></svg>
+          <% end %>
+          <svg class="icon-notifications function"><use xlink:href="<%= asset_path 'icons.svg' %>#icon-notifications"></use></svg>
+          <svg class="icon-mail function"><use xlink:href="<%= asset_path 'icons.svg' %>#icon-mail"></use></svg>
+        </div>
+        <div class="user-info flex-center-around">
+          <%= link_to current_user.username, user_profile_path(current_user.username), class: "user-name" %>
+          <img src="<%= current_user.image_url or asset_path 'default-avatar.png' %>" class="user-avatar" alt="user-avatar" width="32" height="32" />
+          <svg class="icon-chevron-down sixteenth-px dropdown-btn" onclick="document.getElementById('user_settings').classList.toggle('collapsed');"><use xlink:href="<%= asset_path 'icons.svg' %>#icon-chevron-down"></use></svg>
+        </div>
       </div>
-      <div class="user-info flex-center">
-        <span class="user-name">ibrahim</span>
-        <img src="<%= asset_path 'default-avatar.png' %>" class="user-avatar" alt="user-avatar" width="32" height="32" />
-        <svg class="icon-chevron-down sixteenth-px"><use xlink:href="<%= asset_path 'icons.svg' %>#icon-chevron-down"></use></svg>
+      <div id="user_settings" class="collapsed">
+        <%= link_to 'تعديل الملف الشخصي', edit_user_registration_path(current_user) %>
+        <%= link_to 'تسجل الخروج', destroy_user_session_path, :method => :delete %>
       </div>
-    </div>
-  </div>
+    <% else %>
+      <div class="side-elements">
+        <%= link_to "دخول", login_path, class: "btn btn-dark-shadow header-btn" %>
+        <%= link_to "حساب جديد", register_path, class: "btn btn-dark-shadow header-btn" %>
+      </div>
+    <% end %>
+          </div>
   <nav id="navigation-bar">
-    <div class="container flex-center">
+    <div class="container flex-center-around">
       <div class="element active">الأكثر شيوعاً</div>
       <div class="element">الأحدث</div>
       <div class="element">إكتشف</div>

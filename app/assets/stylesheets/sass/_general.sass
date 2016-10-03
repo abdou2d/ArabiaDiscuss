@@ -1,12 +1,20 @@
 body
   background: #f3f3f3
   direction: rtl
-  font-family: 'Cairo', sans-serif
+  font-family: $content-font
 [class^="icon-"], [class*=" icon-"]
   height: 22px
   width: 22px
-  display: inline-block
   fill: currentColor
-.sixteenth-px
-  height: 16px
-  width: 16px
+input, textarea
+  outline: none
+  border: none
+input[type=text], textarea
+  border: 2px solid $primary-color-light
+  border-radius: 3px
+  padding: 5px
+  transition: border-color 200ms ease-in-out
+  &:focus
+    border-color: $primary-color
+a
+  color: $secondary-text-color

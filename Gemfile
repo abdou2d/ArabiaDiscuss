@@ -11,8 +11,11 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'devise', '~> 4.2'
-gem 'slim'
 gem 'acts_as_votable', '~> 0.10.0'
+gem "autoprefixer-rails"
+gem 'redcarpet', '~> 3.3', '>= 3.3.4'
+gem 'pygments.rb', '~> 0.6.3'
+gem 'shrine', '~> 2.3', '>= 2.3.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri

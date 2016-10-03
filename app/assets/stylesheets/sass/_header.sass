@@ -1,7 +1,7 @@
 #Header
   width: 100%
   height: 115px
-  // background: $primary-color
+  font-family: $headline-font
   background: $primary-color
   background: -webkit-linear-gradient(to left, $primary-color, $primary-color-dark)
   background: linear-gradient(to left, $primary-color, $primary-color-dark)
@@ -13,6 +13,7 @@
   width: 100%
   justify-content: space-between
   align-items: center
+  border-top: 2px solid $accent-color
   padding: 0 1em
   .logo
     font-size: 2em
@@ -21,21 +22,26 @@
     span
       color: $primary-color-text
 .side-elements
-  // background: rgba(200, 50, 50, 0.3)
   display: flex
   justify-content: space-between
   .user-functions
-    width: 8em
-    [class^="icon-"]
+    .function
       cursor: pointer
+      margin-right: 10px
+    .add-post
+      width: 22px
+      height: 22px
+      margin-right: 10px
+      color: $primary-color-text
   .user-info
-    // background: rgba(200, 200, 50, 0.4)
-    width: 8em
-    margin-right: 0.5em
+    margin-right: 1em
   .user-avatar
     border-radius: 100%
+    margin: 0 5px 0 4px
   .user-name
     font-size: 1.2em
+    color: $primary-color-text
+    margin-left: 3px
 
 #navigation-bar
   width: 100%
@@ -44,12 +50,29 @@
   height: 40px
   box-shadow: 0px 1px 1px #ccc
   color: $secondary-text-color
-  font-weight: 700
+  font-size: 1.1em
   .element
     padding: 0.3em 2em
     cursor: pointer
-  .active
-    border-bottom: 2px solid $accent-color
   .container
     width: 40%
     height: 100%
+.dropdown-btn
+  cursor: pointer
+#user_settings
+  width: 200px
+  background: white
+  position: absolute
+  left: 20px
+  top: 60px
+  box-shadow: 0px 2px 3px #ccc
+  border-radius: 3px
+  display: flex
+  flex-direction: column
+  a
+    height: 50px
+    padding: 10px 20px
+    border-bottom: 1px solid $divider-color
+.collapsed
+  display: none
+  visibility: hidden

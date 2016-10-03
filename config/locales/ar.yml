@@ -1,23 +1,254 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
-en:
-  hello: "أهلاً بالعالم!"
+---
+ar:
+  date:
+    abbr_day_names:
+    - الأحد
+    - الإثنين
+    - الثّلاثاء
+    - الأربعاء
+    - الخميس
+    - الجمعة
+    - السّبت
+    abbr_month_names:
+    -
+    - يناير
+    - فبراير
+    - مارس
+    - إبريل
+    - مايو
+    - يونيو
+    - يوليو
+    - أغسطس
+    - سبتمبر
+    - أكتوبر
+    - نوفمبر
+    - ديسمبر
+    day_names:
+    - الأحد
+    - الإثنين
+    - الثّلاثاء
+    - الأربعاء
+    - الخميس
+    - الجمعة
+    - السّبت
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %e, %Y"
+      short: "%e %b"
+    month_names:
+    -
+    - يناير
+    - فبراير
+    - مارس
+    - إبريل
+    - مايو
+    - يونيو
+    - يوليو
+    - أغسطس
+    - سبتمبر
+    - أكتوبر
+    - نوفمبر
+    - ديسمبر
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: قبل ساعة واحدة
+        two: قبل ساعتان
+        many: قبل %{count} ساعة
+        other: قبل %{count} ساعات
+      about_x_months:
+        one: قبل شهر واحد
+        two: قبل شهران
+        many: قبل %{count} شهر
+        other: قبل %{count} أشهر
+      about_x_years:
+        one: قبل سنة
+        two: قبل سنتان
+        many: قبل %{count} سنة
+        other: قبل %{count} سنوات
+      almost_x_years:
+        one: تقريبا سنة واحدة
+        two: ما يقرب من سنتين
+        many: ما يقرب من %{count} سنة
+        other: ما يقرب من %{count} سنوات
+      half_a_minute: نصف دقيقة
+      less_than_x_minutes:
+        one: أقل من دقيقة
+        two: أقل من دقيقتان
+        many: أقل من %{count} دقيقة
+        other: أقل من %{count} دقائق
+      less_than_x_seconds:
+        one: أقل من ثانية
+        two: أقل من ثانيتان
+        many: أقل من %{count} ثانية
+        other: أقل من %{count} ثوان
+      over_x_years:
+        one: أكثر من سنة
+        two: أكثر من سنتين
+        many: أكثر من %{count} سنة
+        other: أكثر من %{count} سنوات
+      x_days:
+        one: يوم واحد
+        two: يومان
+        many: "%{count} يوم"
+        other: "%{count} أيام"
+      x_minutes:
+        one: دقيقة واحدة
+        two: دقيقتان
+        few: "%{count} دقيقة"
+        many: "%{count} دقيقة"
+        other: "%{count} دقيقة"
+      x_months:
+        one: شهر واحد
+        two: شهران
+        many: "%{count} شهر"
+        other: "%{count} أشهر"
+      x_seconds:
+        one: ثانية واحدة
+        two: ثانيتان
+        many: "%{count} ثانية"
+        other: "%{count} ثوان"
+    prompts:
+      day: اليوم
+      hour: ساعة
+      minute: دقيقة
+      month: الشهر
+      second: ثانية
+      year: السنة
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: يجب أن تقبل
+      blank: فارغ، يرجى ملء الحقل
+      present: يجب ترك الحقل فارغاً
+      confirmation: لا يتوافق مع %{attribute}
+      empty: فارغ، يرجى ملء الحقل
+      equal_to: يجب أن يساوي %{count}
+      even: يجب أن يكون عددًا زوجيًّا
+      exclusion: محجوز
+      greater_than: يجب أن يكون أكبر من %{count}
+      greater_than_or_equal_to: يجب أن يكون أكبر من أو يساوي %{count}
+      inclusion: غير مُدرج في القائمة
+      invalid: غير مقبول
+      less_than: يجب أن يكون أصغر من %{count}
+      less_than_or_equal_to: يجب أن يكون أصغر من أو يساوي %{count}
+      not_a_number: ليس رقمًا
+      not_an_integer: يجب أن يكون عدداً صحيحاً
+      odd: يجب أن يكون عددًا فرديًّا
+      record_invalid: 'فشل التحقّق من: %{errors}'
+      restrict_dependent_destroy:
+        one: لا يمكن حذف السجل لوجود سجل يعتمد عليه %{record}
+        many: لا يمكن حذف السجل لوجود سجلات تعتمد عليه %{record}
+      taken: محجوز مُسبقًا
+      too_long:
+        zero: أطول من اللّازم (الحد الأقصى هو ولا حرف)
+        one: أطول من اللّازم (الحد الأقصى هو حرف واحد)
+        two: أطول من اللّازم (الحد الأقصى هو حرفان)
+        few: أطول من اللّازم (الحد الأقصى هو %{count} حروف)
+        many: أطول من اللّازم (الحد الأقصى هو %{count} حرف)
+        other: أطول من اللّازم (الحد الأقصى هو %{count} حرف)
+      too_short:
+        zero: أقصر من اللّازم (الحد الأدنى هو ولا حرف)
+        one: أقصر من اللّازم (الحد الأدنى هو حرف واحد)
+        two: أقصر من اللّازم (الحد الأدنى هو حرفان)
+        few: أقصر من اللّازم (الحد الأدنى هو %{count} حروف)
+        many: أقصر من اللّازم (الحد الأدنى هو %{count} حرف)
+        other: أقصر من اللّازم (الحد الأدنى هو %{count} حرف)
+      wrong_length:
+        zero: الطول غير مطابق للحد المطلوب (يجب أن يكون ولا حرف)
+        one: الطول غير مطابق للحد المطلوب (يجب أن يكون حرف واحد)
+        two: الطول غير مطابق للحد المطلوب (يجب أن يكون حرفان)
+        few: الطول غير مطابق للحد المطلوب (يجب أن يكون %{count} أحرف)
+        many: الطول غير مطابق للحد المطلوب (يجب أن يكون %{count} حرف)
+        other: الطول غير مطابق للحد المطلوب (يجب أن يكون %{count} حرف)
+      other_than:
+        zero: الطول يجب ألاّ يكون صفر أحرف
+        one: الطول يجب ألاّ يكون حرفاً وحداً
+        two: الطول يجب ألاّ يكون حرفان
+        few: الطول يجب ألاّ يكون %{count} أحرف
+        many: الطول يجب ألاّ يكون %{count} حرفاً
+        other: الطول يجب ألاّ يكون %{count} حرفاً
+    template:
+      body: 'يُرجى التحقّق من الحقول التّالية:'
+      header:
+        zero: 'ليس بالامكان حفظ %{model}: لايوجد أخطاء.'
+        one: 'ليس بالامكان حفظ %{model}: خطأ واحد.'
+        two: 'ليس بالامكان حفظ %{model}:  خطئان.'
+        few: 'ليس بالامكان حفظ %{model}: %{count} أخطاء.'
+        many: 'ليس بالامكان حفظ %{model}: %{count} أخطاء.'
+        other: 'ليس بالامكان حفظ %{model}: %{count} خطأ.'
+  helpers:
+    select:
+      prompt: يُرجى الاختيار
+    submit:
+      create: "%{model} إنشاء"
+      submit: "%{model} حِفظ"
+      update: "%{model} تحديث"
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: مليار
+          million: مليون
+          quadrillion: كدريليون
+          thousand: ألفّ
+          trillion: تريليون
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            zero: Bytes
+            one: Byte
+            two: Bytes
+            few: Bytes
+            many: Bytes
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " و "
+      two_words_connector: "و "
+      words_connector: "و "
+  time:
+    am: صباحًا
+    formats:
+      default: "%a %b %d %H:%M:%S %Z %Y"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: "مساءً"

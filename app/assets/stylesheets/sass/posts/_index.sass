@@ -1,0 +1,54 @@
+.post
+  margin-bottom: 2em
+  &:last-child
+    margin-bottom: 0
+  .title
+    padding: 0.2em 0.5em
+    font-family: $headline-font
+    border-bottom: 1px solid $divider-color
+    font-size: 1.5em
+  .votes
+    width: 170px
+    padding: 10px
+    border-left: 1px solid $divider-color
+    .upvote
+      border-top-right-radius: 5px
+      border-bottom-right-radius: 5px
+    .downvote
+      border-top-left-radius: 5px
+      border-bottom-left-radius: 5px
+    svg
+      fill: #7c7c7c
+  .upvote
+    color: #4ad669
+    svg
+      fill: #4ad669
+  .downvote
+    color: #e2684d
+    svg
+      fill: #e2684d
+  .vote-avg
+    width: 50px
+    border-right: none
+    border-left: none
+    transition: all 200ms ease-in-out
+.info-element
+  // border-left: 1px solid $divider-color
+  padding: 10px
+  color: lighten($secondary-text-color, 15%)
+  svg
+    margin-bottom: -3px
+.upvote-icon
+  transform: rotate(180deg)
+.vote-box
+  width: 50px
+  padding-top: 3px
+  height: 30px
+  text-align: center
+  border: 1px solid $divider-color
+  svg
+    margin-bottom: -3px
+.user_avatar
+  border-radius: 100%
+  margin-bottom: -7px
+  margin-left: 2px

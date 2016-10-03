@@ -1,7 +1,11 @@
-.flex-center
+.flex-center-around
   display: flex
   align-items: center
   justify-content: space-around
+.flex-center-start
+  display: flex
+  align-items: center
+  justify-content: flex-start
 .container
   margin: 0 auto
   width: 100%
@@ -10,12 +14,18 @@
   background: #ffffff
   border-radius: 5px
   box-shadow: 0px 1px 1px #ccc
+  overflow: hidden
 .flex-column
   display: flex
   flex-direction: column
+.flex-column-center
+  display: flex
+  flex-direction: column
+  align-items: center
 .btn
   margin: 0
   padding: 0.3em 2em
+  font-family: $headline-font
   outline: none
   text-decoration: none
   border: none
@@ -26,9 +36,42 @@
   background: $accent-color
   color: $primary-color-text
   box-shadow: 1px 1px 3px #ccc
-  transition: box-shadow .1s ease-in-out
+  transition: box-shadow .15s ease-in-out
   font-size: 1.1em
   &:hover
     box-shadow: 1px 3px 5px #ccc
+  &:active
+    box-shadow: 0px 0px 0px #ccc
+    background: $accent-color-dark
 .btn-block
   width: 100%
+.btn-dark-shadow
+  box-shadow: 1px 1px 3px darken($primary-color, 15%)
+  &:hover
+    box-shadow: 1px 3px 5px darken($primary-color, 15%)
+  &:active
+    box-shadow: none
+    background: $accent-color-dark
+.header-btn
+  margin-right: 5px
+  background: darken($accent-color, 5%)
+  padding: 0 2em 0.2em 2em
+.sixteenth-px
+  height: 16px !important
+  width: 16px !important
+.half-long-btn
+  width: 30%
+.active
+  border-bottom: 2px solid $accent-color
+@font-face
+  font-family: 'Noto Naskh Arabic'
+  font-style: normal
+  font-weight: 400
+  src: url(font_path("NotoNaskhArabic-Regular.woff2")) format('woff2')
+  src: url(font_path("NotoNaskhArabic-Regular.woff")) format('woff')
+@font-face
+  font-family: 'Noto Naskh Arabic'
+  font-style: normal
+  font-weight: 700
+  src: url(font_path("NotoNaskhArabic-Bold.woff2")) format('woff2')
+  src: url(font_path("NotoNaskhArabic-Bold.woff")) format('woff')
