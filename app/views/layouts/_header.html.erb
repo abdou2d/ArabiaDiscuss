@@ -20,8 +20,8 @@
         </div>
       </div>
       <div id="user_settings" class="collapsed">
-        <%= link_to 'تعديل الملف الشخصي', edit_user_registration_path(current_user) %>
-        <%= link_to 'تسجل الخروج', destroy_user_session_path, :method => :delete %>
+        <%= link_to 'تعديل الملف الشخصي', edit_user_path(current_user) %>
+        <%= link_to 'تسجل الخروج', destroy_user_session_path, method: :delete %>
       </div>
     <% else %>
       <div class="side-elements">

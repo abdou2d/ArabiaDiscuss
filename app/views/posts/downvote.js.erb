@@ -1,2 +1,6 @@
-var avg = parseInt($("#vote_avg_<%= @post.id %>").text(<%= @post.post_votes %>));
-console.log(<%= @post.get_downvotes.size %>);
+var avg = parseInt(<%= @post.post_votes %>);
+var up = parseInt(<%= @post.get_upvotes.size %>);
+var down = parseInt(<%= @post.get_downvotes.size %>);
+$("#vote_avg_<%= @post.id %>").text(avg);
+$("#vote_up_<%= @post.id %>").text(up);
+$("#vote_down_<%= @post.id %>").text(down);

@@ -4,15 +4,17 @@
       <div class="title"><%= link_to @post.title, post_path(@post) %></div>
       <div class="info flex-center-start">
         <div class="votes flex-center-around">
-          <%= link_to upvote_post_path(@post), class: "upvote vote-box" do %>
+          <%= link_to upvote_post_path(@post), method: :patch, remote: true, class: "upvote vote-box" do %>
             <svg class="icon-chevron-down upvote-icon sixteenth-px"><use xlink:href="<%= asset_path 'icons.svg' %>#icon-chevron-down"></use></svg>
-            <span><%= @post.get_upvotes.size %></span>
+            <span id="vote_up_<%= @post.id %>"><%= @post.get_upvotes.size %></span>
           <% end %>
-          <div class="vote-avg vote-box">
-            <%= ( @post.get_upvotes.size - @post.get_downvotes.size ) %>
+          <div id="vote_avg_<%= @post.id %>" class="vote-avg vote-box">
+            <%= @post.post_votes %>
           </div>
-          <%= link_to downvote_post_path(@post), class: "downvote vote-box" do %>
-            <span><%= @post.get_downvotes.size %></span>
+          <%= link_to downvote_post_path(@post), method: :patch, remote: true, class: "downvote vote-box" do %>
+            <span id="vote_down_<%= @post.id %>">
+              <%= @post.get_downvotes.size %>
+            </span>
             <svg class="icon-chevron-down sixteenth-px"><use xlink:href="<%= asset_path 'icons.svg' %>#icon-chevron-down"></use></svg>
           <% end %>
         </div>
