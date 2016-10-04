@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   end
   resources :posts do
     member do
-      get 'upvote', to: 'posts#upvote'
-      get 'downvote', to: 'posts#downvote'
+      patch 'upvote', to: 'posts#upvote'
+      patch 'downvote', to: 'posts#downvote'
     end
   end
   root to: "posts#index"
