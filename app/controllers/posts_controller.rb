@@ -41,15 +41,25 @@ class PostsController < ApplicationController
   def upvote
     if not @post.user.id == current_user.id
       @post.upvote_by current_user
+<<<<<<< HEAD
       @post.user.point_up
       @post.user.save
+=======
+      @post.user.points += 1
+      redirect_to :back
+>>>>>>> master
     end
   end
 
   def downvote
     if not @post.user.id == current_user.id
       @post.downvote_by current_user
+<<<<<<< HEAD
       @post.user.save
+=======
+      @post.user.points -= 1
+      redirect_to :back
+>>>>>>> master
     end
   end
 

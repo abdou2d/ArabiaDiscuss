@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161004141713) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -18,6 +19,9 @@ ActiveRecord::Schema.define(version: 20161004141713) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+=======
+ActiveRecord::Schema.define(version: 20161003090424) do
+>>>>>>> master
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -32,7 +36,10 @@ ActiveRecord::Schema.define(version: 20161004141713) do
     t.integer  "cached_weighted_score",                 default: 0
     t.integer  "cached_weighted_total",                 default: 0
     t.float    "cached_weighted_average", limit: 24,    default: 0.0
+<<<<<<< HEAD
     t.integer  "category_id"
+=======
+>>>>>>> master
     t.index ["cached_votes_down"], name: "index_posts_on_cached_votes_down", using: :btree
     t.index ["cached_votes_score"], name: "index_posts_on_cached_votes_score", using: :btree
     t.index ["cached_votes_total"], name: "index_posts_on_cached_votes_total", using: :btree
@@ -62,7 +69,10 @@ ActiveRecord::Schema.define(version: 20161004141713) do
     t.boolean  "is_admin",                             default: false
     t.text     "image_data",             limit: 65535
     t.integer  "points",                               default: 0
+<<<<<<< HEAD
     t.string   "bio"
+=======
+>>>>>>> master
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
